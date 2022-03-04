@@ -2,9 +2,9 @@ import React from 'react';
 import bemCssModules from 'bem-css-modules';
 import { Link } from 'react-router-dom'
 
-import { default as AsideMenuStyle } from '../AsideMenu.module.scss';
+import { default as AsideMenuStyles } from '../AsideMenu.module.scss';
 
-const style  = bemCssModules(AsideMenuStyle)
+const style  = bemCssModules(AsideMenuStyles)
 
 const AdminMenu = () => {
     return ( 
