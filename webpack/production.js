@@ -1,5 +1,6 @@
+
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
@@ -14,6 +15,11 @@ module.exports = {
 				test: /\.module\.s(a|c)ss$/,
 				use: [
 					MiniCssExtractPlugin.loader,
+					"style-loader",
+					// Translates CSS into CommonJS
+					"css-loader",
+					// Compiles Sass to CSS
+					"sass-loader",
 					{
 						loader: 'css-loader',
 						options: {
