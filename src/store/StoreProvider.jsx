@@ -7,7 +7,7 @@ import request from '../helpers/request';
 
 export const StoreContext = createContext(null);
 
-const StoreProvider = ({children}) => {
+const StoreProvider = ({ children }) => {
 const [courses, setCourses] = useState([]);
 const [user, setUser] = useState(null);
 
@@ -20,13 +20,15 @@ setCourses(data.courses);
 useEffect(() => {
 fetchData();
 }, []);
+
+
     return (
         <StoreContext.Provider value={
-            [courses,
+            {courses,
             setCourses,
             user,
-            setUser]
-            }>
+            setUser
+        }}>
             {children}
         </StoreContext.Provider>
     )

@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import block from 'bem-css-modules';
 import Modal from '../Modal/Modal';
 import { default as LoginFormStyles } from './LoginForm.module.scss'
 import { StoreContext } from '../../store/StoreProvider';
 import request from '../../helpers/request';
+
 
 
 const style = block(LoginFormStyles);
@@ -42,8 +43,14 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
         }else{
             setValidateMessage(data.message);
         }
-    }
-    
+    };
+
+    useEffect(() => {
+        if(isModalOpen){
+        handleResetInput();
+        }
+    }, [isModalOpen])
+
     const validateMessageComponent = validateMessage.length ? 
     <p className={style('validate-message')}>{validateMessage}</p> : null
 
