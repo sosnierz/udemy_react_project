@@ -10,7 +10,7 @@ import request from '../../helpers/request';
 
 const style = block(LoginFormStyles);
 
-const LoginForm = ({handleOnClose, isModalOpen}) => {
+const LoginForm = ({ handleOnClose, isModalOpen }) => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const[validateMessage, setValidateMessage]= useState('');
